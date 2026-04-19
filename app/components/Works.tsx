@@ -68,6 +68,7 @@ export default function Works() {
           <div className="section-label">
             <span className="w-8 h-[2px] bg-brand-sky" />
             WORKS
+            <span className="w-8 h-[2px] bg-brand-sky" />
           </div>
           <h2 className="section-title mt-4">
             クライアントと歩んだ、

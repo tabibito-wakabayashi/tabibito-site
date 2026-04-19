@@ -13,35 +13,48 @@ const INQUIRY = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const isMobile = useIsMobile();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get('name') ?? '');
-    const company = String(data.get('company') ?? '');
-    const email = String(data.get('email') ?? '');
-    const tel = String(data.get('tel') ?? '');
-    const inquiry = String(data.get('inquiry') ?? '');
-    const message = String(data.get('message') ?? '');
+    if (sending) return;
 
-    const subject = `【お問い合わせ】${inquiry}`;
-    const body = [
-      `お名前: ${name}`,
-      `会社名: ${company}`,
-      `メールアドレス: ${email}`,
-      `電話番号: ${tel}`,
-      `お問い合わせ種別: ${inquiry}`,
-      '',
-      'お問い合わせ内容:',
-      message,
-    ].join('\n');
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get('name') ?? ''),
+      company: String(data.get('company') ?? ''),
+      email: String(data.get('email') ?? ''),
+      tel: String(data.get('tel') ?? ''),
+      inquiry: String(data.get('inquiry') ?? ''),
+      message: String(data.get('message') ?? ''),
+    };
 
-    const mailto = `mailto:tabibito.company@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setSending(true);
+    setErrorMessage(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok || !result.ok) {
+        throw new Error(result.error ?? '送信に失敗しました。');
+      }
+      form.reset();
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : '送信に失敗しました。時間をおいて再度お試しください。',
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -176,14 +189,24 @@ export default function Contact() {
                     />
                   </Field>
 
+                  {errorMessage && (
+                    <p className="mt-5 text-sm text-red-600" role="alert">
+                      {errorMessage}
+                    </p>
+                  )}
+
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <label className="flex items-center gap-2 text-sm text-brand-ink/70 cursor-pointer">
                       <input type="checkbox" required className="w-4 h-4 accent-brand-sunset" />
                       <span>プライバシーポリシーに同意する</span>
                     </label>
-                    <button type="submit" className="btn-primary w-full sm:w-auto justify-center">
-                      送信する
-                      <span className="text-lg">→</span>
+                    <button
+                      type="submit"
+                      disabled={sending}
+                      className="btn-primary w-full sm:w-auto justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {sending ? '送信中…' : '送信する'}
+                      {!sending && <span className="text-lg">→</span>}
                     </button>
                   </div>
                 </>
