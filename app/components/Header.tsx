@@ -17,9 +17,17 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 40);
+        ticking = false;
+      });
+    };
     onScroll();
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -29,10 +37,10 @@ export default function Header() {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 py-4 transition-[background-color,box-shadow,padding] duration-300 ${
           scrolled
-            ? 'bg-white/95 shadow-sm pt-3 pb-6 lg:backdrop-blur-lg lg:bg-white/90'
-            : 'bg-transparent pt-5 pb-8'
+            ? 'bg-white/95 shadow-sm lg:pt-3 lg:pb-6 lg:backdrop-blur-lg lg:bg-white/90'
+            : 'bg-transparent lg:pt-5 lg:pb-8'
         }`}
       >
         <div className="section-container flex items-center justify-between">
