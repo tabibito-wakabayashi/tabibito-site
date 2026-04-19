@@ -47,7 +47,19 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-brand-mist via-white to-[#FFEEE2]"
     >
-      {/* Static blobs — hidden on mobile to avoid expensive GPU blurs */}
+      {/* Mobile: static radial gradients (no GPU blur) reproduce the blob color wash */}
+      <div
+        className="lg:hidden absolute inset-0 overflow-hidden pointer-events-none"
+        style={{
+          backgroundImage: [
+            'radial-gradient(circle at 0% 0%, rgba(91, 165, 203, 0.32), transparent 55%)',
+            'radial-gradient(circle at 100% 38%, rgba(216, 121, 75, 0.22), transparent 55%)',
+            'radial-gradient(circle at 40% 100%, rgba(142, 198, 224, 0.38), transparent 55%)',
+          ].join(', '),
+        }}
+      />
+
+      {/* Desktop: blurred blobs */}
       <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-brand-sky/40 blur-3xl" />
         <div className="absolute top-1/3 -right-40 w-[620px] h-[620px] rounded-full bg-brand-sunset/30 blur-3xl" />
