@@ -1,8 +1,9 @@
 'use client';
 
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type MotionStyle } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const HERO_IMAGES = [
   '/images/people/1.jpeg',
@@ -15,6 +16,8 @@ const HERO_IMAGES = [
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -23,6 +26,8 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
+  const parallaxStyle: MotionStyle = isMobile ? {} : { y, opacity, scale };
 
   const title1 = '“らしさ”が'.split('');
   const title2 = '輝く世界を。'.split('');
@@ -42,18 +47,18 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-brand-mist via-white to-[#FFEEE2]"
     >
-      {/* Static blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Static blobs — hidden on mobile to avoid expensive GPU blurs */}
+      <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-brand-sky/40 blur-3xl" />
         <div className="absolute top-1/3 -right-40 w-[620px] h-[620px] rounded-full bg-brand-sunset/30 blur-3xl" />
         <div className="absolute -bottom-40 left-1/3 w-[480px] h-[480px] rounded-full bg-brand-sky-light/50 blur-3xl" />
       </div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
+      {/* Grid pattern overlay — desktop only */}
+      <div className="hidden lg:block absolute inset-0 bg-grid opacity-40 pointer-events-none" />
 
       <motion.div
-        style={{ y, opacity, scale }}
+        style={parallaxStyle}
         className="section-container relative z-10 w-full"
       >
         <div className="grid lg:grid-cols-12 gap-10 items-center">
@@ -97,11 +102,13 @@ export default function Hero() {
             className="lg:col-span-5 relative"
           >
             <motion.div
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              animate={isMobile ? undefined : { y: [0, -14, 0] }}
+              transition={isMobile ? undefined : { duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               className="relative aspect-[4/5] max-w-md mx-auto will-change-transform"
               style={{
-                filter: 'drop-shadow(0 25px 40px rgb(26 43 58 / 0.25))',
+                filter: isMobile
+                  ? 'drop-shadow(0 15px 20px rgb(26 43 58 / 0.18))'
+                  : 'drop-shadow(0 25px 40px rgb(26 43 58 / 0.25))',
               }}
             >
               <div

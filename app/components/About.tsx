@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const VALUES = [
   { label: '素直', en: 'Honest' },
@@ -12,6 +13,8 @@ const VALUES = [
 ];
 
 export default function About() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="about" className="relative py-16 md:py-24 bg-white overflow-hidden">
       <div className="section-container relative">
@@ -65,8 +68,8 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
           <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+            animate={isMobile ? undefined : { rotate: -360 }}
+            transition={isMobile ? undefined : { duration: 40, repeat: Infinity, ease: 'linear' }}
             className="absolute -top-20 -right-20 w-72 h-72 opacity-20"
           >
             <svg viewBox="0 0 200 200" className="w-full h-full">
@@ -101,8 +104,8 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
           <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+            animate={isMobile ? undefined : { rotate: 360 }}
+            transition={isMobile ? undefined : { duration: 40, repeat: Infinity, ease: 'linear' }}
             className="absolute -top-20 -right-20 w-72 h-72 opacity-20"
           >
             <svg viewBox="0 0 200 200" className="w-full h-full">
@@ -139,8 +142,8 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
           <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+            animate={isMobile ? undefined : { rotate: -360 }}
+            transition={isMobile ? undefined : { duration: 40, repeat: Infinity, ease: 'linear' }}
             className="absolute -top-20 -right-20 w-72 h-72 opacity-20"
           >
             <svg viewBox="0 0 200 200" className="w-full h-full">
