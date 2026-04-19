@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const INQUIRY = [
   'SNS運用代行について',
@@ -12,6 +13,7 @@ const INQUIRY = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,13 +50,13 @@ export default function Contact() {
       <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
 
       <motion.div
-        animate={{ scale: [1, 1.2, 1], x: [0, 40, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        animate={isMobile ? undefined : { scale: [1, 1.2, 1], x: [0, 40, 0] }}
+        transition={isMobile ? undefined : { duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute top-20 -left-20 w-72 h-72 rounded-full bg-white/10 blur-3xl pointer-events-none"
       />
       <motion.div
-        animate={{ scale: [1, 1.15, 1], x: [0, -40, 0] }}
-        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+        animate={isMobile ? undefined : { scale: [1, 1.15, 1], x: [0, -40, 0] }}
+        transition={isMobile ? undefined : { duration: 16, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute bottom-20 -right-20 w-72 h-72 rounded-full bg-white/10 blur-3xl pointer-events-none"
       />
 

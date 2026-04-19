@@ -104,13 +104,9 @@ export default function Service() {
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-3">
                   {s.bullets.map((b, bi) => (
-                    <motion.div
+                    <div
                       key={bi}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.1 + bi * 0.05 }}
-                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-brand-mist transition"
+                      className="flex items-start gap-3 p-3 rounded-xl md:hover:bg-white/60 md:transition-colors"
                     >
                       <span
                         className={`flex-shrink-0 mt-1 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs ${
@@ -123,7 +119,7 @@ export default function Service() {
                         <div className="font-bold text-sm text-brand-ink">{b.k}</div>
                         <div className="text-xs text-brand-ink/60 mt-0.5">{b.v}</div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 

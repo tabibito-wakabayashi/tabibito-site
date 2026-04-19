@@ -45,7 +45,7 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative min-h-screen pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-brand-mist via-white to-[#FFEEE2]"
+      className="relative min-h-screen min-h-[100svh] pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-brand-mist via-white to-[#FFEEE2]"
     >
       {/* Mobile: static radial gradients (no GPU blur) reproduce the blob color wash */}
       <div
