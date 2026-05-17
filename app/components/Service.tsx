@@ -97,7 +97,7 @@ export default function Service() {
                     </span>
                   </div>
                 )}
-                <h3 className="font-display text-3xl md:text-5xl font-black leading-[1.15] text-brand-ink">
+                <h3 className="font-display text-3xl md:text-4xl xl:text-5xl font-black leading-[1.15] text-brand-ink md:whitespace-nowrap">
                   {s.title}
                 </h3>
                 <p className="mt-5 text-brand-ink/80 leading-loose">{s.desc}</p>
