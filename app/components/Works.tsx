@@ -42,15 +42,15 @@ const WORKS = [
   },
   {
     industry: '会社員・主婦',
-    title: 'リリース3ヶ月で受講生50名突破',
+    title: 'リリース3ヶ月でメンバー50名突破',
     summary: 'Threadsに特化した実践型カリキュラムで、未経験からでも収益化を目指せる学習環境を提供しています。',
     metrics: [
       { label: '満足度', value: '96%' },
-      { label: '平均収益化まで', value: '2ヶ月' },
-      { label: '卒業生平均副業収入', value: '7.5万円' },
+      { label: '平均収益化期間', value: '2ヶ月' },
+      { label: '平均副業収入', value: '7.5万円' },
     ],
     image: '/images/AdobeStock_1025414470.jpg',
-    tag: 'スクール',
+    tag: 'プログラム',
   },
 ];
 
