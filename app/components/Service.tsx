@@ -3,7 +3,19 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const SERVICES = [
+type Service = {
+  number: string;
+  en: string;
+  jp: string;
+  title: string;
+  desc: string;
+  bullets: { k: string; v: string }[];
+  notes?: string[];
+  image: string;
+  color: string;
+};
+
+const SERVICES: Service[] = [
   {
     number: '01',
     en: 'SNS MARKETING',
@@ -24,12 +36,16 @@ const SERVICES = [
     en: 'SNS SCHOOL',
     jp: 'Threads運用実践プログラム',
     title: 'Threads運用実践プログラム',
-    desc: '業界初のThreadsに特化した、SNS運用代行で稼ぐ力を身につける実践型プログラムです。スキル習得だけで終わらず、実務・営業までを通じて、自立して案件を獲得できる人材を育成します。',
+    desc: '業界では珍しいThreadsに特化した、SNS運用代行で稼ぐ力を身につける実践型プログラムです。スキル習得だけで終わらず、実務・営業までを通じて、自立して案件を獲得できる人材を育成します。',
     bullets: [
       { k: 'Threads特化カリキュラム', v: '最新アルゴリズム対応' },
       { k: '1on1コーチング', v: '現役運用者による個別伴走' },
-      { k: '案件保証', v: '弊社が案件を発注' },
+      { k: '修了要件を満たした方全員に案件をご依頼', v: '所定のカリキュラムを修了された方に当社より発注' },
       { k: '営業全面サポート', v: '案件を自分で取れるまで個別伴走' },
+    ],
+    notes: [
+      '※修了要件の詳細は、お申し込み前に書面にてご案内します。',
+      '※発注する案件の内容・時期・条件は、修了時の状況に応じて個別にご案内します。',
     ],
     image: '/images/school-1.png',
     color: 'sunset',
@@ -122,6 +138,16 @@ export default function Service() {
                     </div>
                   ))}
                 </div>
+
+                {s.notes && (
+                  <div className="mt-5 space-y-1">
+                    {s.notes.map((n, ni) => (
+                      <p key={ni} className="text-xs leading-relaxed text-brand-ink/60">
+                        {n}
+                      </p>
+                    ))}
+                  </div>
+                )}
 
                 <div className="mt-10">
                   <a

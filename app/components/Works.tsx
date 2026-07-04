@@ -3,7 +3,17 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const WORKS = [
+type Work = {
+  industry: string;
+  title: string;
+  summary: string;
+  metrics: { label: string; value: string }[];
+  note?: string;
+  image: string;
+  tag: string;
+};
+
+const WORKS: Work[] = [
   {
     industry: '集客 / 学習塾',
     title: 'SNS運用で生徒30名獲得に貢献',
@@ -46,9 +56,10 @@ const WORKS = [
     summary: 'Threadsに特化した実践型カリキュラムで、未経験からでも収益化を目指せる学習環境を提供しています。',
     metrics: [
       { label: '満足度', value: '96%' },
-      { label: '平均収益化期間', value: '2ヶ月' },
-      { label: '平均副業収入', value: '7.5万円' },
+      { label: '収益化までの期間（中央値）', value: '2ヶ月' },
+      { label: '副業収入（中央値）', value: '7.5万円' },
     ],
+    note: '※上記は、2025年12月〜2026年5月に受講され、収益化に至った30名を対象とした自社調査による中央値です。成果には個人差があり、すべての方の収益化・同水準の収益を保証するものではありません。',
     image: '/images/AdobeStock_1025414470.jpg',
     tag: 'プログラム',
   },
@@ -135,6 +146,11 @@ export default function Works() {
                     </div>
                   ))}
                 </div>
+                {w.note && (
+                  <p className="mt-4 text-xs leading-relaxed text-brand-ink/70">
+                    {w.note}
+                  </p>
+                )}
               </div>
             </motion.article>
           ))}
