@@ -4,10 +4,10 @@ import './globals.css';
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '700'],
   variable: '--font-noto-sans-jp',
   display: 'swap',
-  preload: true,
+  preload: false,
 });
 
 const zenKaku = Zen_Kaku_Gothic_New({

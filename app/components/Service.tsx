@@ -95,7 +95,13 @@ export default function Service() {
                   transition={{ duration: 0.8 }}
                   className="relative w-full h-full"
                 >
-                  <Image src={s.image} alt={s.jp} fill className="object-cover" />
+                  <Image
+                    src={s.image}
+                    alt={s.jp}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 42vw, 493px"
+                    className="object-cover"
+                  />
                 </motion.div>
               </div>
 

@@ -199,6 +199,7 @@ export default function About() {
                 src="/images/ceo-1.jpg"
                 alt="代表取締役 若林 真也"
                 fill
+                sizes="(max-width: 640px) 90vw, 384px"
                 className="object-cover"
               />
             </div>

@@ -60,7 +60,7 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="group relative px-4 py-2 text-sm font-semibold text-brand-ink"
+                className="group relative px-4 py-2 text-sm font-bold text-brand-ink"
               >
                 <span className="block font-en tracking-widest">{item.label}</span>
                 <span className="absolute left-1/2 -translate-x-1/2 top-full mt-0.5 text-[10px] text-brand-sky opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">

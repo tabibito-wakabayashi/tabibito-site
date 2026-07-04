@@ -110,7 +110,13 @@ export default function Works() {
                   transition={{ duration: 0.8 }}
                   className="relative w-full h-full"
                 >
-                  <Image src={w.image} alt={w.title} fill className="object-cover" />
+                  <Image
+                    src={w.image}
+                    alt={w.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 576px"
+                    className="object-cover"
+                  />
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/70 via-brand-ink/10 to-transparent" />
                 <div className="absolute top-5 left-5 bg-white/95 backdrop-blur rounded-full px-3 py-1 text-[10px] font-bold tracking-widest">
