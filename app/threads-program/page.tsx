@@ -421,7 +421,7 @@ export default function ThreadsProgramPage() {
                 推奨環境
               </div>
               <p className="mt-2 text-brand-ink/85">
-                PC（インターネット接続環境）
+                Google Chrome（最新版）／PC・スマートフォンに対応
               </p>
             </div>
           </div>
@@ -494,9 +494,10 @@ export default function ThreadsProgramPage() {
               <div className="rounded-2xl border border-brand-ink/10 p-6 md:p-8">
                 <h3 className="font-bold text-brand-ink">お支払い方法</h3>
                 <ul className="mt-4 space-y-2 text-brand-ink/80 leading-relaxed list-disc pl-5">
-                  <li>クレジットカード決済（一括・分割）</li>
-                  <li>信販会社の分割払い（ショッピングクレジット）</li>
-                  <li>銀行振込</li>
+                  <li>銀行振込（分割払いは原則3回まで）</li>
+                  <li>
+                    クレジットカード決済（一括／カード会社での分割払いは、各カード会社へのお申し込みによります）
+                  </li>
                 </ul>
               </div>
 
@@ -505,7 +506,7 @@ export default function ThreadsProgramPage() {
                 <ul className="mt-4 space-y-2 text-brand-ink/80 leading-relaxed list-disc pl-5">
                   <li>振込手数料（銀行振込の場合）</li>
                   <li>
-                    分割払いの分割手数料（クレジットカード会社・信販会社の規定によります）
+                    分割手数料（クレジットカード会社での分割払いをご利用の場合、各社の規定によります）
                   </li>
                   <li>受講に伴い発生する実費（発生する場合）</li>
                 </ul>
@@ -515,7 +516,7 @@ export default function ThreadsProgramPage() {
 
           <div className="mt-6 rounded-2xl bg-brand-mist p-6 md:p-8">
             <p className="text-sm text-brand-ink/75 leading-relaxed">
-              ※分割払いの回数・手数料・支払総額は、各クレジットカード会社・信販会社の審査および契約条件により異なります。当社独自の分割払いではありません。お支払い条件・中途解約・返金の詳細は
+              ※銀行振込の分割払いは原則3回まで承ります（例：3回払いで総額600,000円／別途、振込手数料が発生します）。クレジットカードでの分割払いをご利用の場合、回数・手数料・支払総額は各カード会社の規定・契約条件によります。お支払い条件・中途解約・返金の詳細は
               <a
                 href="/tokutei-shogyo"
                 className="mx-1 font-bold text-brand-sky-dark underline underline-offset-4 hover:text-brand-sunset transition-colors"
@@ -603,7 +604,7 @@ export default function ThreadsProgramPage() {
               </li>
               <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
                 <span className="text-brand-ink/60">お支払い時期</span>
-                <span className="font-bold">お申し込み時</span>
+                <span className="font-bold">お申し込み時（銀行振込は契約後3営業日以内）</span>
               </li>
               <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
                 <span className="text-brand-ink/60">キャンセル・返金</span>

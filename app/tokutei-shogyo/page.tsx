@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const INFO: { label: string; value: React.ReactNode }[] = [
   { label: '販売事業者', value: '株式会社たびびと' },
-  { label: '運営責任者', value: '若林 真也' },
+  { label: '運営統括責任者', value: '若林 真也' },
   { label: '所在地', value: '〒150-0002 東京都渋谷区渋谷3-2-4 帝都青山第2ビルBIZcomfort渋谷南4F-01' },
   {
     label: '電話番号',
@@ -29,21 +29,32 @@ const INFO: { label: string; value: React.ReactNode }[] = [
   {
     label: '販売URL',
     value: (
-      <a
-        href="https://tabibito.site/"
-        className="text-brand-sky-dark hover:text-brand-sunset transition-colors underline underline-offset-4"
-      >
-        https://tabibito.site/
-      </a>
+      <>
+        <a
+          href="https://tabibito.site/"
+          className="text-brand-sky-dark hover:text-brand-sunset transition-colors underline underline-offset-4"
+        >
+          https://tabibito.site/
+        </a>
+        <span className="mt-1.5 block text-xs text-brand-ink/60">
+          専用ページ：
+          <a
+            href="https://tabibito.site/threads-program"
+            className="text-brand-sky-dark hover:text-brand-sunset transition-colors underline underline-offset-4"
+          >
+            https://tabibito.site/threads-program
+          </a>
+        </span>
+      </>
     ),
   },
   {
     label: '販売価格',
     value: (
       <>
-        受講料 600,000円（税込）
+        Threads運用実践プログラム 受講料 600,000円（税込）
         <span className="mt-1.5 block text-xs text-brand-ink/60">
-          ※分割払いをご利用の場合の支払総額・回数・手数料は、お申し込み時およびクレジット契約時にご案内します
+          分割払いをご利用の場合の総額例：銀行振込・3回払いで総額600,000円（別途、振込手数料が発生します）。支払総額・回数・手数料は、お申し込み時およびご契約時にご案内します。
         </span>
       </>
     ),
@@ -54,7 +65,7 @@ const INFO: { label: string; value: React.ReactNode }[] = [
       <ul className="space-y-1 list-disc pl-5">
         <li>消費税（表示価格に含む）</li>
         <li>振込手数料（銀行振込の場合）</li>
-        <li>分割払いをご利用の場合の分割手数料（クレジットカード会社または信販会社の規定によります）</li>
+        <li>分割手数料（クレジットカード会社での分割払いをご利用の場合、各社の規定によります）</li>
         <li>受講に伴い発生する実費（発生する場合）</li>
       </ul>
     ),
@@ -62,83 +73,76 @@ const INFO: { label: string; value: React.ReactNode }[] = [
   {
     label: 'お支払い方法',
     value: (
-      <>
-        <ul className="space-y-1 list-disc pl-5">
-          <li>クレジットカード決済（一括・分割）</li>
-          <li>信販会社の分割払い（ショッピングクレジット）</li>
-          <li>銀行振込</li>
-          <li>その他、お申し込み時にご案内する方法</li>
-        </ul>
-        <span className="mt-2.5 block text-xs text-brand-ink/60">
-          ※分割払いは、クレジットカード会社または信販会社が提供する分割払いをご利用いただく形となります。当社独自の分割払いではありません。支払回数、手数料、支払総額は、各決済会社・信販会社の審査および契約条件により異なります。
-        </span>
-      </>
+      <ul className="space-y-1 list-disc pl-5">
+        <li>銀行振込（分割払いは原則3回まで）</li>
+        <li>
+          クレジットカード決済（一括／カード会社での分割払いは、各カード会社へのお申し込みによります）
+        </li>
+      </ul>
     ),
   },
   {
     label: 'お支払い時期',
     value: (
       <ul className="space-y-1 list-disc pl-5">
-        <li>クレジットカード決済：お申し込み時に決済手続きを行います。実際の引き落とし日は各カード会社の規定に基づきます。</li>
-        <li>信販会社の分割払い：契約時に信販会社が定める支払条件に基づきお支払いいただきます。</li>
-        <li>銀行振込：契約締結日から5営業日以内にお支払いください。</li>
+        <li>銀行振込：契約締結日から3営業日以内にお支払いください。</li>
+        <li>
+          クレジットカード決済：お申し込み時に決済手続きを行います。実際の引き落とし日は各カード会社の規定に基づきます。
+        </li>
       </ul>
     ),
   },
   {
     label: '役務の提供時期（引き渡し時期）',
     value:
-      '本講座の有効期間は、原則としてお申し込み日から3か月間です。具体的な開始日・提供スケジュールはお申し込み時にご案内します。',
+      '本プログラムの受講期間は、お申し込み日から3か月間です。開始日・提供スケジュールはお申し込み時にご案内します。',
+  },
+  {
+    label: '動作環境',
+    value:
+      '本プログラムはオンライン（LearningBox／テキスト教材）で提供します。推奨環境：Google Chrome（最新版）／PC・スマートフォンに対応。',
   },
   {
     label: '中途解約・返金について',
     value: (
       <div className="space-y-3">
         <p>
-          クーリング・オフ期間経過後も、書面または電磁的方法によるお申し出により、将来に向かって中途解約が可能です。返金の取り扱いは以下のとおりです。
+          受講開始後も、書面または電磁的方法によるお申し出により、将来に向かって中途解約が可能です。当社は、解約のお申し出を受けた時点までに提供済みの役務（教材の閲覧、面談の実施等）に相当する額を控除し、残額を返金します。
         </p>
         <ul className="space-y-2 list-disc pl-5">
-          <li>
-            <span className="font-bold">クーリング・オフ期間内：</span>
-            お支払い済みの受講料を全額返金します。
-          </li>
-          <li>
-            <span className="font-bold">受講開始後の中途解約：</span>
-            既に提供した役務（教材の閲覧、面談の実施、課題添削等）の対価を控除し、残額を返金します。当社が請求できる金額は、特定商取引法に定める上限額（提供済み役務の対価および法定の損害額）の範囲内とします。
-          </li>
           <li>
             <span className="font-bold">返金の申請方法：</span>
             メール（info@tabibito.site）、お問い合わせフォーム、または書面のいずれかにて承ります。
           </li>
           <li>
             <span className="font-bold">返金の時期：</span>
-            返金額の確定後、10営業日以内にご指定の口座へお振込みします。
+            返金額の確定後、3営業日以内にご指定の口座へお振込みします。
           </li>
           <li>
-            <span className="font-bold">分割払い契約中に解約した場合：</span>
-            クレジットカード会社または信販会社との分割払い契約の解約・精算は各社の規定に基づきます。当社からの返金は上記の考え方に準じて行います。
+            <span className="font-bold">分割払いご利用中に解約した場合：</span>
+            クレジットカード会社との分割払い契約の解約・精算は各社の規定に基づきます。当社からの返金は上記の考え方に準じて行います。
           </li>
         </ul>
         <span className="block text-xs text-brand-ink/60">
-          ※控除対象および返金額の詳細は、解約時点の役務提供状況（教材閲覧・面談実施・課題添削の有無等）に応じて個別に算定し、契約書面の定めに基づきご案内します。
+          ※控除対象および返金額の詳細は、解約時点の役務提供状況（教材閲覧・面談実施の有無等）に応じて個別に算定し、契約書面の定めに基づきご案内します。契約書面受領日から8日以内の無条件解約については、下記「クーリング・オフについて（自主解約特約）」によります。
         </span>
       </div>
     ),
   },
   {
-    label: 'クーリング・オフについて',
+    label: 'クーリング・オフについて（自主解約特約）',
     value:
-      '本契約は特定商取引法上の「特定継続的役務提供」に該当する場合があり、契約書面を受領した日から起算して8日間は、書面または電磁的記録により無条件で契約を解除（クーリング・オフ）できます。詳細は契約書面に記載します。',
+      '本プログラムは通信販売にあたり、法律上のクーリング・オフ制度の適用はありません。ただし当社は、消費者保護の観点から自主基準として、契約書面を受領した日から起算して8日間は、書面または電磁的記録によるお申し出により、無条件で解約（お支払い済み受講料の全額返金）を承ります。詳細は契約書面に記載します。',
   },
   {
     label: '返品・交換・キャンセルについて',
     value:
-      '上記クーリング・オフおよび中途解約の定めによります。デジタルコンテンツ等の性質上、これらの法定の権利の範囲を超える返金・キャンセルはお受けできない場合があります。',
+      '上記の中途解約および自主解約特約の定めによります。デジタルコンテンツ等の性質上、これらの定めの範囲を超える返金・キャンセルはお受けできない場合があります。',
   },
   {
     label: '表現及び商品に関する注意書き',
     value:
-      '本サービスの効果には個人差があり、成果を保証するものではありません。記載の成果・体験談等は個人の実績であり、同様の成果を保証するものではありません。',
+      '本プログラムはスキル習得を目的とした教育サービスであり、収入・案件獲得・特定の成果を保証するものではありません。効果には個人差があり、記載の成果・体験談等は個人の実績であって、同様の成果を保証するものではありません。',
   },
 ];
 
@@ -177,7 +181,7 @@ export default function TokuteiShogyoPage() {
           </div>
 
           <p className="mt-6 text-right text-xs text-brand-ink/50">
-            制定日：2026年7月4日　／　改定日：2026年7月5日　／　株式会社たびびと
+            制定日：2026年7月4日　／　改定日：2026年7月6日　／　株式会社たびびと
           </p>
         </div>
       </section>
