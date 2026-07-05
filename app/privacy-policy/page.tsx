@@ -199,7 +199,7 @@ export default function PrivacyPolicyPage() {
               <div className="mt-8 p-6 md:p-8 rounded-2xl bg-brand-mist">
                 <p className="font-bold text-brand-ink">■ お問い合わせ・開示請求 宛先</p>
                 <p className="mt-4 font-bold text-brand-ink">株式会社たびびと 個人情報お問い合わせ窓口</p>
-                <p className="mt-3">所在地：〒150-0002 東京都渋谷区渋谷3-2-4</p>
+                <p className="mt-3">所在地：〒150-0002 東京都渋谷区渋谷3-2-4 帝都青山第2ビルBIZcomfort渋谷南4F-01</p>
                 <p className="mt-1">メールアドレス：info@tabibito.site</p>
                 <p className="mt-1">
                   電話番号：080-2622-7535（受付時間：平日10:00〜18:00／土日祝を除く）
@@ -209,7 +209,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="text-right text-sm text-brand-ink/60 space-y-1">
               <p>制定日：2026年7月4日</p>
-              <p>最終改定日：2026年7月4日</p>
+              <p>最終改定日：2026年7月5日</p>
               <p>株式会社たびびと</p>
             </div>
           </div>

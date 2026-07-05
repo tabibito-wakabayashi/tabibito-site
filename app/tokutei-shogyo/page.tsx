@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const INFO: { label: string; value: React.ReactNode }[] = [
   { label: '販売事業者', value: '株式会社たびびと' },
   { label: '運営責任者', value: '若林 真也' },
-  { label: '所在地', value: '〒150-0002 東京都渋谷区渋谷3-2-4' },
+  { label: '所在地', value: '〒150-0002 東京都渋谷区渋谷3-2-4 帝都青山第2ビルBIZcomfort渋谷南4F-01' },
   {
     label: '電話番号',
     value: (

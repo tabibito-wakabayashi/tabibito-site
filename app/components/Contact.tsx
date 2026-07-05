@@ -7,7 +7,6 @@ import { useIsMobile } from '../hooks/useIsMobile';
 const INQUIRY = [
   'SNS運用代行について',
   'SNS広告運用について',
-  'SNSスクールについて',
   'その他',
 ];
 

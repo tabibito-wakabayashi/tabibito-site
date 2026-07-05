@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const INFO = [
   { label: '会社', value: '株式会社たびびと' },
-  { label: '所在地', value: '〒150-0002 東京都渋谷区渋谷3-2-4' },
+  { label: '所在地', value: '東京都渋谷区渋谷3-2-4 帝都青山第2ビルBIZcomfort渋谷南4F-01' },
   { label: '代表取締役', value: '若林真也' },
   { label: '従業員数', value: '10名（業務委託含む）' },
   { label: '取引銀行', value: 'みずほ銀行　住信SBIネット銀行' },
