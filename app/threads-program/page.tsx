@@ -208,16 +208,13 @@ export default function ThreadsProgramPage() {
               </h1>
 
               <p className="mt-7 text-brand-ink/80 leading-loose max-w-xl">
-                業界ではまだ珍しいThreads運用を、アカウント設計・投稿・分析・提案まで体系的に学ぶ実践プログラムです。準備編から全6章のカリキュラムと、隔週の個別面談で、実務に近い演習を通じてスキルの習得を目指します。
+                業界ではまだ珍しいThreads運用を、アカウント設計・投稿・分析・提案まで体系的に学ぶ実践プログラムです。カリキュラムと、隔週の個別面談で、実務に近い演習を通じてスキルの習得を目指します。
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row gap-4">
                 <a href="/#contact" className="btn-primary justify-center">
                   プログラムについて相談する
                   <span className="text-lg leading-none">→</span>
-                </a>
-                <a href="#curriculum" className="btn-secondary justify-center">
-                  カリキュラムを見る
                 </a>
               </div>
 
