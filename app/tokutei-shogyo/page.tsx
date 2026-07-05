@@ -65,7 +65,7 @@ const INFO: { label: string; value: React.ReactNode }[] = [
       <ul className="space-y-1 list-disc pl-5">
         <li>消費税（表示価格に含む）</li>
         <li>振込手数料（銀行振込の場合）</li>
-        <li>分割手数料（クレジットカード会社での分割払いをご利用の場合、各社の規定によります）</li>
+        <li>分割手数料（カード会社での分割払いをご利用の場合、各社の規定によります）</li>
         <li>受講に伴い発生する実費（発生する場合）</li>
       </ul>
     ),

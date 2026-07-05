@@ -503,7 +503,7 @@ export default function ThreadsProgramPage() {
                 <ul className="mt-4 space-y-2 text-brand-ink/80 leading-relaxed list-disc pl-5">
                   <li>振込手数料（銀行振込の場合）</li>
                   <li>
-                    分割手数料（クレジットカード会社での分割払いをご利用の場合、各社の規定によります）
+                    分割手数料（カード会社での分割払いをご利用の場合、各社の規定によります）
                   </li>
                   <li>受講に伴い発生する実費（発生する場合）</li>
                 </ul>
