@@ -23,6 +23,7 @@ const TARGETS = [
   'people/6.jpeg',
   'AdobeStock_1848977828.jpg',
   'AdobeStock_1025414470.jpg',
+  'kaigo.jpg',
 ];
 
 function fmt(bytes) {

@@ -51,17 +51,16 @@ const WORKS: Work[] = [
     tag: 'Threads',
   },
   {
-    industry: '会社員・主婦',
-    title: 'リリース3ヶ月でメンバー50名突破',
-    summary: 'Threadsに特化した実践型カリキュラムで、未経験からでも収益化を目指せる学習環境を提供しています。',
+    industry: '採用 / 介護業',
+    title: 'Instagram運用で、求人応募数が10倍',
+    summary: 'エンタメとリアルな職場の様子を掛け合わせ、爆発的な認知獲得と採用成功を実現しました。',
     metrics: [
-      { label: '満足度', value: '96%' },
-      { label: '収益化までの期間（中央値）', value: '2ヶ月' },
-      { label: '副業収入（中央値）', value: '7.5万円' },
+      { label: '総再生回数', value: '約330万回' },
+      { label: 'フォロワー数', value: '約1万人' },
+      { label: '応募数', value: '毎月20件以上' },
     ],
-    note: '※上記は、2025年12月〜2026年5月に受講され、収益化に至った30名を対象とした自社調査による中央値です。成果には個人差があり、すべての方の収益化・同水準の収益を保証するものではありません。',
-    image: '/images/AdobeStock_1025414470.jpg',
-    tag: 'プログラム',
+    image: '/images/kaigo.jpg',
+    tag: 'Instagram',
   },
 ];
 
