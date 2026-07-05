@@ -14,6 +14,7 @@ type Service = {
   image: string;
   color: string;
   href: string;
+  cta: string;
 };
 
 const SERVICES: Service[] = [
@@ -32,6 +33,7 @@ const SERVICES: Service[] = [
     image: '/images/sns-hero.jpg',
     color: 'sky',
     href: '#contact',
+    cta: '詳しく相談する',
   },
   {
     number: '02',
@@ -47,11 +49,11 @@ const SERVICES: Service[] = [
     ],
     notes: [
       '※本プログラムはスキル習得を目的とした教育サービスであり、収入・案件獲得・特定の成果を保証するものではありません。',
-      '※効果には個人差があります。掲載の成果・体験談等は個人の実績であり、同様の成果を保証するものではありません。',
     ],
     image: '/images/school-1.png',
     color: 'sunset',
     href: '/threads-program',
+    cta: '詳しく見る',
   },
 ];
 
@@ -165,7 +167,7 @@ export default function Service() {
                       s.color === 'sky' ? 'text-brand-sky-dark' : 'text-brand-sunset'
                     } group/btn`}
                   >
-                    詳しく相談する
+                    {s.cta}
                     <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                   </a>
                 </div>
