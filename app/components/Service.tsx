@@ -13,6 +13,7 @@ type Service = {
   notes?: string[];
   image: string;
   color: string;
+  href: string;
 };
 
 const SERVICES: Service[] = [
@@ -30,26 +31,27 @@ const SERVICES: Service[] = [
     ],
     image: '/images/sns-hero.jpg',
     color: 'sky',
+    href: '#contact',
   },
   {
     number: '02',
     en: 'SNS SCHOOL',
     jp: 'Threads運用実践プログラム',
     title: 'Threads運用実践プログラム',
-    desc: '業界では珍しいThreadsに特化し、SNS運用代行に必要な設計・投稿作成・分析・提案スキルを実践的に学ぶプログラムです。学んで終わりではなく、実務に近い経験と案件獲得までサポート。現場に近い環境で、実践力を身につけられます。',
+    desc: '業界ではまだ珍しいThreadsに特化し、SNS運用代行に必要な設計・投稿作成・分析・提案のスキルを実践的に学ぶ教育プログラムです。準備編から全6章のカリキュラムと隔週の個別面談で、実務に近い演習を通じてスキルの習得を目指します。',
     bullets: [
-      { k: 'Threads特化カリキュラム', v: '最新アルゴリズム対応' },
-      { k: '1on1コーチング', v: '現役運用者による個別伴走' },
-      { k: '案件紹介制度あり', v: 'カリキュラム修了後、一定の基準を満たした方に当社または提携先の案件をご案内' },
-      { k: '営業・提案サポート', v: '課題添削・提案練習・面談を通じて、実務に必要な考え方と行動設計を伴走' },
+      { k: 'Threads特化カリキュラム', v: '最新アルゴリズムに対応した設計・投稿・分析' },
+      { k: '1on1個別面談', v: '隔週・全8回、現役運用者が学習を伴走' },
+      { k: '実践トレーニング', v: '演習・模擬シミュレーションで実務の進め方を習得' },
+      { k: '営業・提案スキル', v: '提案・商談・見積などの進め方を学ぶ' },
     ],
     notes: [
-      '※案件紹介・発注・継続発注・収入の発生を保証するものではありません。',
-      '※案件のご案内は、カリキュラムの修了状況、対応品質、稼働状況、案件状況等を踏まえて当社が判断します。',
-      '※成果には個人差があり、特定の収益・案件獲得を保証するものではありません。',
+      '※本プログラムはスキル習得を目的とした教育サービスであり、収入・案件獲得・特定の成果を保証するものではありません。',
+      '※効果には個人差があります。掲載の成果・体験談等は個人の実績であり、同様の成果を保証するものではありません。',
     ],
     image: '/images/school-1.png',
     color: 'sunset',
+    href: '/threads-program',
   },
 ];
 
@@ -158,7 +160,7 @@ export default function Service() {
 
                 <div className="mt-10">
                   <a
-                    href="#contact"
+                    href={s.href}
                     className={`inline-flex items-center gap-2 font-bold ${
                       s.color === 'sky' ? 'text-brand-sky-dark' : 'text-brand-sunset'
                     } group/btn`}
