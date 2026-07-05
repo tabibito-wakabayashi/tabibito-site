@@ -566,22 +566,17 @@ export default function ThreadsProgramPage() {
               まずは、お気軽にご相談ください。
             </h2>
             <p className="mt-6 text-white/90 leading-loose">
-              プログラムの内容や進め方について、疑問やご不安があればお気軽にお問い合わせください。お申し込みも下記フォームより承ります。
+              プログラムの内容や進め方について、疑問やご不安があればお気軽にお問い合わせください。
+              <br />
+              お申し込みも下記フォームより承ります。
             </p>
 
-            <div className="mt-9 flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="/#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white text-brand-ink rounded-full font-bold shadow-lg hover:-translate-y-0.5 transition-transform"
-              >
-                プログラムについて相談する
-                <span className="text-lg leading-none">→</span>
-              </a>
+            <div className="mt-9 flex justify-center">
               <a
                 href="/#contact"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-brand-ink text-white rounded-full font-bold shadow-lg hover:-translate-y-0.5 transition-transform"
               >
-                お申し込みはこちら
+                プログラムについて相談する
                 <span className="text-lg leading-none">→</span>
               </a>
             </div>
@@ -600,8 +595,12 @@ export default function ThreadsProgramPage() {
                 <span className="font-bold">お申し込み日から3か月間</span>
               </li>
               <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
-                <span className="text-brand-ink/60">お支払い時期</span>
-                <span className="font-bold">お申し込み時（銀行振込は契約後3営業日以内）</span>
+                <span className="text-brand-ink/60 whitespace-nowrap">お支払い時期</span>
+                <span className="font-bold text-right">
+                  お申し込み時
+                  <br />
+                  （銀行振込は契約後3営業日以内）
+                </span>
               </li>
               <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
                 <span className="text-brand-ink/60">キャンセル・返金</span>
@@ -609,7 +608,9 @@ export default function ThreadsProgramPage() {
               </li>
             </ul>
             <p className="mt-4 text-xs text-brand-ink/60 leading-relaxed">
-              お申し込み前に、上記の分量・支払総額・お支払い時期・提供時期・キャンセル条件を最終確認画面でご確認いただけます。詳細は
+              お申し込み前に、上記の分量・支払総額・お支払い時期・提供時期・キャンセル条件を最終確認画面でご確認いただけます。
+              <br />
+              詳細は
               <a
                 href="/tokutei-shogyo"
                 className="mx-1 font-bold text-brand-sky-dark underline underline-offset-4 hover:text-brand-sunset transition-colors"
