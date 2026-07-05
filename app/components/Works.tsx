@@ -43,9 +43,9 @@ const WORKS: Work[] = [
     title: 'Threads運用開始2週間で予約20件超を獲得',
     summary: '施術の魅力や世界観を伝える発信設計により、短期間で認知を拡大。DMでの相談を200件以上集め、来店予約につながる導線を構築しました。',
     metrics: [
-      { label: '予約獲得数', value: '20件+' },
-      { label: 'DM問い合わせ', value: '200件+' },
       { label: '総閲覧数', value: '約20万回' },
+      { label: 'DM問い合わせ', value: '200件+' },
+      { label: '予約獲得数', value: '20件+' },
     ],
     image: '/images/AdobeStock_1848977828.jpg',
     tag: 'Threads',
