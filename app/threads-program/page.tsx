@@ -333,7 +333,7 @@ export default function ThreadsProgramPage() {
           <SectionHeading
             label="CURRICULUM"
             title="カリキュラム概要"
-            lead="準備編から全6章＋番外編まで。基礎理解から投稿制作、実践トレーニング、営業までを段階的に学びます。"
+            lead="基礎理解から投稿制作、実践トレーニング、営業までを段階的に学びます。"
           />
 
           <div className="mt-12 space-y-4">
