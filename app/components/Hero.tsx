@@ -33,10 +33,14 @@ export default function Hero() {
   const title2 = '輝く世界を。'.split('');
 
   const [imageIndex, setImageIndex] = useState(0);
+  // Mount slideshow images progressively (current + the next preloading)
+  // so the initial page load only fetches what is about to be shown.
+  const [mountedCount, setMountedCount] = useState(2);
 
   useEffect(() => {
     const id = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+      setMountedCount((count) => Math.min(count + 1, HERO_IMAGES.length));
     }, 4000);
     return () => clearInterval(id);
   }, []);
@@ -76,7 +80,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 min-w-0">
             <h1 className="font-display font-black tracking-tight leading-[1.1] pb-2">
-              <div className="text-[clamp(2.75rem,10vw,5rem)] md:text-[clamp(3.5rem,8vw,5.25rem)] lg:text-[clamp(3.5rem,6vw,5.25rem)] flex flex-nowrap whitespace-nowrap">
+              <div className="text-[clamp(2rem,11.5vw,5rem)] md:text-[clamp(3.5rem,8vw,5.25rem)] lg:text-[clamp(3.5rem,6vw,5.25rem)] flex flex-nowrap whitespace-nowrap">
                 {title1.map((char, i) => (
                   <motion.span
                     key={`t1-${i}`}
@@ -89,7 +93,7 @@ export default function Hero() {
                   </motion.span>
                 ))}
               </div>
-              <div className="text-[clamp(2.75rem,10vw,5rem)] md:text-[clamp(3.5rem,8vw,5.25rem)] lg:text-[clamp(3.5rem,6vw,5.25rem)] flex flex-nowrap pl-[1.5em] whitespace-nowrap">
+              <div className="text-[clamp(2rem,11.5vw,5rem)] md:text-[clamp(3.5rem,8vw,5.25rem)] lg:text-[clamp(3.5rem,6vw,5.25rem)] flex flex-nowrap pl-[1.2em] md:pl-[1.5em] whitespace-nowrap">
                 {title2.map((char, i) => (
                   <motion.span
                     key={`t2-${i}`}
@@ -129,7 +133,7 @@ export default function Hero() {
                   clipPath: 'polygon(38% 0, 100% 0, 100% 62%, 62% 100%, 0 100%, 0 38%)',
                 }}
               >
-                {HERO_IMAGES.map((src, i) => (
+                {HERO_IMAGES.slice(0, mountedCount).map((src, i) => (
                   <div
                     key={src}
                     className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
@@ -142,7 +146,6 @@ export default function Hero() {
                       sizes="(max-width: 1024px) 80vw, 40vw"
                       className="object-cover"
                       priority={i === 0}
-                      loading={i === 0 ? 'eager' : 'lazy'}
                     />
                   </div>
                 ))}

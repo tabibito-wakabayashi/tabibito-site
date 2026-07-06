@@ -227,7 +227,7 @@ export default function ThreadsProgramPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/5] sm:aspect-[3/2] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/school-1.png"
+                  src="/images/school-1.jpg"
                   alt="Threads運用実践プログラムの学習イメージ"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

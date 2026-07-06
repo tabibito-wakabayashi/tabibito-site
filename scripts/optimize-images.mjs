@@ -10,7 +10,7 @@ const PNG_QUALITY = 82;
 const TARGETS = [
   'ceo-1.jpg',
   'sns-hero.jpg',
-  'school-1.png',
+  'school-1.jpg',
   'people-1.jpg',
   'people-4.jpg',
   'people-5.jpg',

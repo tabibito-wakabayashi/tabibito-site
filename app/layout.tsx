@@ -27,6 +27,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://tabibito.site'),
   title: '株式会社たびびと | "らしさ"が輝く世界を。SNSマーケティング&スクール',
   description:
     '「もし、あの出会いがなかったら…」と思われる特別な存在であり続ける。株式会社たびびとは、SNS運用代行・広告運用、Threads特化スクールで、あなたの"らしさ"を伝える旅に伴走します。',

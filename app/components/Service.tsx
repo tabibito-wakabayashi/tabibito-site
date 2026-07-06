@@ -8,6 +8,8 @@ type Service = {
   en: string;
   jp: string;
   title: string;
+  /** 折り返し位置を制御したい場合に指定（表示テキストは title と同一にする） */
+  titleParts?: string[];
   desc: string;
   bullets: { k: string; v: string }[];
   notes?: string[];
@@ -40,6 +42,7 @@ const SERVICES: Service[] = [
     en: 'SNS SCHOOL',
     jp: 'Threads運用実践プログラム',
     title: 'Threads運用実践プログラム',
+    titleParts: ['Threads運用', '実践プログラム'],
     desc: '業界ではまだ珍しいThreadsに特化し、SNS運用代行に必要な設計・投稿作成・分析・提案のスキルを実践的に学ぶ教育プログラムです。準備編から全6章のカリキュラムと隔週の個別面談で、実務に近い演習を通じてスキルの習得を目指します。',
     bullets: [
       { k: 'Threads特化カリキュラム', v: '最新アルゴリズムに対応' },
@@ -50,7 +53,7 @@ const SERVICES: Service[] = [
     notes: [
       '※本プログラムはスキル習得を目的とした教育サービスであり、収入・案件獲得・特定の成果を保証するものではありません。',
     ],
-    image: '/images/school-1.png',
+    image: '/images/school-1.jpg',
     color: 'sunset',
     href: '/threads-program',
     cta: '詳しく見る',
@@ -124,8 +127,12 @@ export default function Service() {
                     </span>
                   </div>
                 )}
-                <h3 className="font-display text-3xl md:text-4xl xl:text-5xl font-black leading-[1.15] text-brand-ink md:whitespace-nowrap">
-                  {s.title}
+                <h3 className="font-display text-3xl md:text-4xl xl:text-5xl font-black leading-[1.15] text-brand-ink">
+                  {(s.titleParts ?? [s.title]).map((part) => (
+                    <span key={part} className="inline-block">
+                      {part}
+                    </span>
+                  ))}
                 </h3>
                 <p className="mt-5 text-brand-ink/80 leading-loose">{s.desc}</p>
 

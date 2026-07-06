@@ -121,19 +121,23 @@ export default function Contact() {
               ) : (
                 <>
                   <div className="grid sm:grid-cols-2 gap-5">
-                    <Field label="お名前" required>
+                    <Field label="お名前" required htmlFor="contact-name">
                       <input
+                        id="contact-name"
                         type="text"
                         name="name"
                         required
+                        autoComplete="name"
                         placeholder="山田 太郎"
                         className="form-input"
                       />
                     </Field>
-                    <Field label="会社名">
+                    <Field label="会社名" htmlFor="contact-company">
                       <input
+                        id="contact-company"
                         type="text"
                         name="company"
+                        autoComplete="organization"
                         placeholder="株式会社〇〇"
                         className="form-input"
                       />
@@ -141,19 +145,23 @@ export default function Contact() {
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                    <Field label="メールアドレス" required>
+                    <Field label="メールアドレス" required htmlFor="contact-email">
                       <input
+                        id="contact-email"
                         type="email"
                         name="email"
                         required
+                        autoComplete="email"
                         placeholder="name@example.com"
                         className="form-input"
                       />
                     </Field>
-                    <Field label="電話番号">
+                    <Field label="電話番号" htmlFor="contact-tel">
                       <input
+                        id="contact-tel"
                         type="tel"
                         name="tel"
+                        autoComplete="tel"
                         placeholder="090-0000-0000"
                         className="form-input"
                       />
@@ -179,8 +187,9 @@ export default function Contact() {
                     </div>
                   </Field>
 
-                  <Field label="お問い合わせ内容" required className="mt-5">
+                  <Field label="お問い合わせ内容" required className="mt-5" htmlFor="contact-message">
                     <textarea
+                      id="contact-message"
                       name="message"
                       required
                       rows={5}
@@ -198,7 +207,17 @@ export default function Contact() {
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <label className="flex items-center gap-2 text-sm text-brand-ink/70 cursor-pointer">
                       <input type="checkbox" required className="w-4 h-4 accent-brand-sunset" />
-                      <span>プライバシーポリシーに同意する</span>
+                      <span>
+                        <a
+                          href="/privacy-policy"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-2 hover:text-brand-sunset transition-colors"
+                        >
+                          プライバシーポリシー
+                        </a>
+                        に同意する
+                      </span>
                     </label>
                     <button
                       type="submit"
@@ -243,15 +262,20 @@ function Field({
   required,
   children,
   className = '',
+  htmlFor,
 }: {
   label: string;
   required?: boolean;
   children: React.ReactNode;
   className?: string;
+  htmlFor?: string;
 }) {
   return (
     <div className={className}>
-      <label className="block text-xs font-bold tracking-widest text-brand-ink/70 mb-2">
+      <label
+        htmlFor={htmlFor}
+        className="block text-xs font-bold tracking-widest text-brand-ink/70 mb-2"
+      >
         {label}
         {required && <span className="ml-1 text-brand-sunset">*</span>}
       </label>

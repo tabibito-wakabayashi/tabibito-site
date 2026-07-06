@@ -209,7 +209,7 @@ export default function About() {
             <span className="font-en text-xs tracking-[0.3em] text-brand-sunset font-bold">
               MESSAGE / 代表メッセージ
             </span>
-            <h3 className="font-display text-3xl md:text-4xl lg:text-[2.5rem] font-black leading-tight md:whitespace-nowrap">
+            <h3 className="font-display text-3xl md:text-4xl xl:text-[2.5rem] font-black leading-tight md:whitespace-nowrap">
               一人ひとりの人生に、<br />
               <span className="text-brand-sunset">転機を生む伴走者</span>でありたい。
             </h3>
