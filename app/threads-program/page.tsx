@@ -617,7 +617,7 @@ export default function ThreadsProgramPage() {
               </li>
             </ul>
             <p className="mt-4 text-xs text-brand-ink/60 leading-relaxed">
-              上記の分量・受講料（支払総額）・お支払い方法／時期・提供時期・キャンセル／返金条件は、お申し込みの最終確認画面にも表示されます。
+              分量・受講料（支払総額）・お支払い方法／時期・提供時期・キャンセル／返金条件は、お申し込みの最終確認画面にも表示されます。
               <br />
               詳細は
               <a
