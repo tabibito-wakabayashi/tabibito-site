@@ -58,19 +58,21 @@ export default function PrivacyPolicyPage() {
 
               <h3 className="mt-10 font-bold text-brand-ink">（1）お客様またはユーザーに関する個人情報</h3>
               <ul className="mt-4 space-y-2 list-disc pl-6">
-                <li>お客様及びユーザー管理のため</li>
-                <li>キャンペーン・懸賞企画、アンケートの実施</li>
+                <li>お客様及びユーザーの管理、本人確認、受講契約の締結・履行のため</li>
+                <li>講座・教材の提供、個別面談・チャットサポート等のサービス運営のため</li>
                 <li>当社サービスまたはウェブサイトの運営上必要な事項の通知（電子メールによるものを含む）</li>
-                <li>当社商品等の広告・宣伝、販売の勧誘（電子メールによるものを含む）</li>
+                <li>アンケートの実施、及びお客様満足度・サービス品質の向上のため</li>
+                <li>当社サービスに関する広告・宣伝、ご案内の送信（電子メールによるものを含む）</li>
                 <li>メールマガジンの送信</li>
-                <li>商品等の梱包・発送業務</li>
-                <li>課金計算、料金請求</li>
-                <li>会員及びユーザーが投稿した情報の掲載</li>
+                <li>受講料の計算・請求、及び入金の確認のため</li>
                 <li>各種問い合わせ、アフターサービス対応</li>
-                <li>マーケティングデータの調査・分析、新たなサービス開発・業務提携企業に提供する統計資料作成</li>
+                <li>マーケティングデータの調査・分析、新たなサービスの開発のため</li>
                 <li>技術問題の究明やサービスの品質向上</li>
                 <li>契約や法律等に基づく権利の行使や義務の履行</li>
               </ul>
+              <p className="mt-4 text-sm text-brand-ink/70">
+                ※電子メールによる広告・宣伝またはメールマガジンの送信は、あらかじめ同意をいただいた方に対してのみ行います。配信を希望されない場合は、各メールに記載する配信停止（オプトアウト）の手続き、または下記「5. お問い合わせ窓口」へのご連絡により、いつでも配信を停止できます。
+              </p>
 
               <h3 className="mt-10 font-bold text-brand-ink">（2）採用選考応募者に関する個人情報</h3>
               <ul className="mt-4 space-y-2 list-disc pl-6">
@@ -129,10 +131,32 @@ export default function PrivacyPolicyPage() {
                 3. 個人情報の取扱
               </h2>
 
-              <h3 className="mt-8 font-bold text-brand-ink">（1）個人情報の管理について</h3>
+              <h3 className="mt-8 font-bold text-brand-ink">（1）個人情報の管理・安全管理措置について</h3>
               <p className="mt-4">
-                当社は、ユーザーの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行ないます。
+                当社は、ユーザーの個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、次の安全管理措置を講じ、個人情報の厳重な管理を行います。
               </p>
+              <ul className="mt-4 space-y-2 list-disc pl-6">
+                <li>
+                  <span className="font-bold">組織的安全管理措置：</span>
+                  個人情報の取扱いに関する責任者を定めるとともに、取扱い状況を確認できる体制を整備し、個人情報の取扱いに関する規程等に基づいて運用したうえで、必要に応じて点検・見直しを行います。
+                </li>
+                <li>
+                  <span className="font-bold">人的安全管理措置：</span>
+                  個人情報の適正な取扱いに関する留意事項について、従業者に対し必要な教育・周知を行います。
+                </li>
+                <li>
+                  <span className="font-bold">物理的安全管理措置：</span>
+                  個人情報を取り扱う機器・電子媒体・書類等の管理、及び権限を有しない者による個人情報の閲覧の防止等の措置を講じます。
+                </li>
+                <li>
+                  <span className="font-bold">技術的安全管理措置：</span>
+                  個人情報を取り扱う情報システムへのアクセス制御、不正アクセスの防止、通信経路の暗号化等の措置を講じます。
+                </li>
+                <li>
+                  <span className="font-bold">外的環境の把握：</span>
+                  外部サービス（学習管理システム〔LearningBox〕・アクセス解析ツール等）を利用して個人情報を取り扱う場合には、当該サービスを提供する事業者が個人情報を取り扱う国・地域における個人情報の保護に関する制度を把握したうえで、適切な安全管理措置を講じます。
+                </li>
+              </ul>
 
               <h3 className="mt-10 font-bold text-brand-ink">（2）個人情報の第三者提供</h3>
               <p className="mt-4">
@@ -146,9 +170,6 @@ export default function PrivacyPolicyPage() {
                 </li>
                 <li>
                   会社の権利を守るため、または訴訟手続き、裁判所命令、および法的手続きに遵守するために当社が必要と判断した場合
-                </li>
-                <li>
-                  当社プラットフォーム等を経由して商品販売等を行うビジネスパートナーに対し、商品購入者の商品郵送先の住所、氏名、電話番号などの基本的な個人情報の提供を行う場合
                 </li>
                 <li>採用活動のため、人材紹介会社等に氏名、電話番号、役職などの基本的な個人情報の提供を行う場合</li>
               </ul>
@@ -167,6 +188,52 @@ export default function PrivacyPolicyPage() {
               </p>
               <p className="mt-4">
                 利用者は、ご利用のブラウザの設定によりCookieの受け取りを拒否し、または警告を表示させることができます。Cookieを無効化した場合、当社ウェブサイトの一部の機能がご利用いただけない場合がありますので、あらかじめご了承ください。
+              </p>
+
+              <h4 className="mt-8 font-bold text-brand-ink">外部送信される利用者情報について（電気通信事業法第27条の12）</h4>
+              <p className="mt-4">
+                当社のウェブサイトでは、利用状況の把握・分析等のため、以下の外部事業者が提供するツールを利用しています。これらのツールにより、利用者の端末から当該外部事業者に対して、利用者に関する情報が送信される場合があります。送信先事業者・送信される情報・利用目的等は次のとおりです。
+              </p>
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full min-w-[560px] border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-brand-mist text-left text-brand-ink">
+                      <th className="border border-brand-ink/15 px-3 py-2 font-bold">送信先事業者名／ツール</th>
+                      <th className="border border-brand-ink/15 px-3 py-2 font-bold">送信される情報</th>
+                      <th className="border border-brand-ink/15 px-3 py-2 font-bold">利用目的</th>
+                      <th className="border border-brand-ink/15 px-3 py-2 font-bold">無効化（オプトアウト）</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-brand-ink/15 px-3 py-2 align-top">
+                        Google LLC<br />
+                        （Googleアナリティクス）
+                      </td>
+                      <td className="border border-brand-ink/15 px-3 py-2 align-top">
+                        Cookie識別子、閲覧ページのURL・タイトル、リファラー、IPアドレス、ブラウザ・OS・端末に関する情報、閲覧日時・滞在時間等の利用状況に関する情報
+                      </td>
+                      <td className="border border-brand-ink/15 px-3 py-2 align-top">
+                        ウェブサイトの利用状況の測定・分析、及びサービスの改善
+                      </td>
+                      <td className="border border-brand-ink/15 px-3 py-2 align-top">
+                        ブラウザのCookie設定、または「Googleアナリティクス オプトアウト アドオン」により無効化できます。
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-sm text-brand-ink/70">
+                送信先事業者における情報の取扱いについては、各事業者のプライバシーポリシー（Google社：
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-sky-dark hover:text-brand-sunset transition-colors underline underline-offset-2"
+                >
+                  https://policies.google.com/privacy
+                </a>
+                ）をご確認ください。なお、利用するツールを追加・変更した場合は、本項目を更新します。
               </p>
             </section>
 
@@ -199,7 +266,8 @@ export default function PrivacyPolicyPage() {
               <div className="mt-8 p-6 md:p-8 rounded-2xl bg-brand-mist">
                 <p className="font-bold text-brand-ink">■ お問い合わせ・開示請求 宛先</p>
                 <p className="mt-4 font-bold text-brand-ink">株式会社たびびと 個人情報お問い合わせ窓口</p>
-                <p className="mt-3">所在地：〒150-0002 東京都渋谷区渋谷3-2-4 帝都青山第2ビルBIZcomfort渋谷南4F-01</p>
+                <p className="mt-3">代表者：代表取締役 若林 真也</p>
+                <p className="mt-1">所在地：〒150-0002 東京都渋谷区渋谷3-2-4 帝都青山第2ビルBIZcomfort渋谷南4F-01</p>
                 <p className="mt-1">メールアドレス：info@tabibito.site</p>
                 <p className="mt-1">
                   電話番号：080-2622-7535（受付時間：平日10:00〜18:00／土日祝を除く）
@@ -209,7 +277,7 @@ export default function PrivacyPolicyPage() {
 
             <div className="text-right text-sm text-brand-ink/60 space-y-1">
               <p>制定日：2026年7月4日</p>
-              <p>最終改定日：2026年7月5日</p>
+              <p>最終改定日：2026年7月7日</p>
               <p>株式会社たびびと</p>
             </div>
           </div>

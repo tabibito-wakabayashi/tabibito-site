@@ -585,30 +585,39 @@ export default function ThreadsProgramPage() {
           {/* pre-application confirmation */}
           <div className="mt-12 max-w-3xl mx-auto rounded-[1.75rem] bg-white/95 p-6 md:p-8 shadow-xl">
             <h3 className="font-bold text-brand-ink">お申し込み前のご確認</h3>
-            <ul className="mt-4 grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-brand-ink/80">
-              <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
+            <p className="mt-2 text-xs text-brand-ink/60 leading-relaxed">
+              お申し込み前に、次の内容を必ずご確認ください（特定商取引法第12条の6に基づく表示事項）。
+            </p>
+            <ul className="mt-4 text-sm text-brand-ink/80">
+              <li className="grid grid-cols-1 sm:grid-cols-[150px,1fr] gap-1 sm:gap-4 border-b border-brand-ink/10 py-3">
+                <span className="text-brand-ink/60">提供内容・分量</span>
+                <span className="font-bold">
+                  教材（準備編＋全6章＋番外編）／個別面談 全8回×各60分／チャット質疑応答 無制限（受講期間中）
+                </span>
+              </li>
+              <li className="grid grid-cols-1 sm:grid-cols-[150px,1fr] gap-1 sm:gap-4 border-b border-brand-ink/10 py-3">
                 <span className="text-brand-ink/60">受講料（税込）</span>
                 <span className="font-bold">600,000円</span>
               </li>
-              <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
-                <span className="text-brand-ink/60">受講期間（提供時期）</span>
-                <span className="font-bold">お申し込み日から3か月間</span>
-              </li>
-              <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
-                <span className="text-brand-ink/60 whitespace-nowrap">お支払い時期</span>
-                <span className="font-bold text-right">
-                  お申し込み時
-                  <br />
-                  （銀行振込は契約後3営業日以内）
+              <li className="grid grid-cols-1 sm:grid-cols-[150px,1fr] gap-1 sm:gap-4 border-b border-brand-ink/10 py-3">
+                <span className="text-brand-ink/60">お支払い方法・時期</span>
+                <span className="font-bold">
+                  銀行振込またはクレジットカード決済／お申し込み時にお手続き（銀行振込は契約締結後3営業日以内）
                 </span>
               </li>
-              <li className="flex justify-between gap-4 border-b border-brand-ink/10 py-2">
+              <li className="grid grid-cols-1 sm:grid-cols-[150px,1fr] gap-1 sm:gap-4 border-b border-brand-ink/10 py-3">
+                <span className="text-brand-ink/60">提供時期（受講期間）</span>
+                <span className="font-bold">お申し込み日から3か月間</span>
+              </li>
+              <li className="grid grid-cols-1 sm:grid-cols-[150px,1fr] gap-1 sm:gap-4 border-b border-brand-ink/10 py-3">
                 <span className="text-brand-ink/60">キャンセル・返金</span>
-                <span className="font-bold">特商法表記に準じます</span>
+                <span className="font-bold">
+                  契約書面（電磁的記録を含む）を受領した日から起算して8日以内は、無条件で全額返金します。以後は、デジタルコンテンツを含む役務の性質上、原則として返金いたしません（当社の債務不履行等の場合を除き、返金しない額が平均的な損害の額を超えるときはその超える部分を返金します）。
+                </span>
               </li>
             </ul>
             <p className="mt-4 text-xs text-brand-ink/60 leading-relaxed">
-              お申し込み前に、上記の分量・支払総額・お支払い時期・提供時期・キャンセル条件を最終確認画面でご確認いただけます。
+              上記の分量・受講料（支払総額）・お支払い方法／時期・提供時期・キャンセル／返金条件は、お申し込みの最終確認画面にも表示されます。
               <br />
               詳細は
               <a
