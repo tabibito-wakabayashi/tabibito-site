@@ -612,7 +612,7 @@ export default function ThreadsProgramPage() {
               <li className="grid grid-cols-1 sm:grid-cols-[150px,1fr] gap-1 sm:gap-4 border-b border-brand-ink/10 py-3">
                 <span className="text-brand-ink/60">キャンセル・返金</span>
                 <span className="font-bold">
-                  契約書面（電磁的記録を含む）を受領した日から起算して8日以内は、無条件で全額返金します。以後は、デジタルコンテンツを含む役務の性質上、原則として返金いたしません（当社の債務不履行等の場合を除き、返金しない額が平均的な損害の額を超えるときはその超える部分を返金します）。
+                  契約書面（紙面）の到達日から8日間はクーリング・オフ（無条件解約・全額返金）が可能です。以後は、デジタルコンテンツを含む役務の性質上、原則として返金いたしません（当社の債務不履行等の場合を除き、返金しない額が平均的な損害の額を超えるときはその超える部分を返金します）。
                 </span>
               </li>
             </ul>
